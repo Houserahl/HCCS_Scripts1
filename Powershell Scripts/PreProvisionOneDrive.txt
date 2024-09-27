@@ -1,0 +1,12 @@
+Connect-SPOService -Url https://domain-admin.sharepoint.com/
+$users = Import-CSV "c:\temp\OneDrive\Users1.csv"
+ 
+$userArray = @()
+ 
+foreach ($row in $users)
+{
+    $email = $row.Emails
+ 
+    $userArray += $email
+}
+Request-SPOPersonalSite -UserEmails $users -NoWait

@@ -1,0 +1,1 @@
+Get-AzureADServicePrincipal -All $true | Where-Object { $_.Tags -like "*WindowsAzureActiveDirectoryIntegratedApp*" } | Export-Csv -Path C:\temp\EnterpriseApps.csv
